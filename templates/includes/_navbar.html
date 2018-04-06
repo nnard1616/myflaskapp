@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand"><span style="color: white; ">MyFlaskApp</span></a>
+
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li>
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li>
+                <a class="nav-link" href="/about">About</a>
+            </li>
+            <li>
+                <a class="nav-link" href="/articles">Articles</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav navbar-right">
+            {%  if not session.logged_in %}
+            <li>
+                <a class="nav-link" href="/register">Register</a>
+            </li>
+            <li>
+                <a class="nav-link" href="/login">Login</a>
+            </li>
+            {% else %}
+            <li>
+                <a class="nav-link" href="/dashboard">Dashboard</a>
+            </li>
+            <li>
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+            {%  endif %}
+        </ul>
+    </div>
+</nav>
